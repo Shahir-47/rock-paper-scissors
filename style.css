@@ -1,0 +1,131 @@
+h1,
+.container{
+    border : 1px solid red;
+}
+
+@font-face {
+    font-family: 'neon';
+    src: url('./font/hellodenverdisplayregular_v1.6.eot');
+    src: url('./font/hellodenverdisplayregular_v1.6.eot?#iefix') format('embedded-opentype'),
+         url('./font/hellodenverdisplayregular_v1.6.woff') format('woff'),
+         url('./font/hellodenverdisplayregular_v1.6.ttf') format('truetype'),
+         url('./font/hellodenverdisplayregular_v1.6.svg#HELLODENVERDISPLAYREGULARRg') format('svg');
+}
+
+
+h1{
+    font-size: 4.2rem;
+    font-family: neon;
+    text-align: center;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+@keyframes flicker-rock {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 4px #D30302,
+        0 0 11px #D30302,
+        0 0 19px #D30302,
+        0 0 40px #FF5161,
+        0 0 80px #FF5161,
+        0 0 90px #FF5161,
+        0 0 100px #FF5161,
+        0 0 150px #FF5161;
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+}
+
+@keyframes flicker-paper {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 4px #b48505,
+        0 0 11px #b48505,
+        0 0 19px #b48505,
+        0 0 40px #ffdb4e,
+        0 0 80px #ffdb4e,
+        0 0 90px #ffdb4e,
+        0 0 100px #ffdb4e,
+        0 0 150px #ffdb4e;
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+}
+
+@keyframes flicker-scissors {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 4px #02c435,
+        0 0 11px #02c435,
+        0 0 19px #02c435,
+        0 0 40px #00fe9b,
+        0 0 80px #00fe9b,
+        0 0 90px #00fe9b,
+        0 0 100px #00fe9b,
+        0 0 150px #00fe9b;
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+}
+
+h1 .rock{
+    animation: flicker-rock 1.0s infinite alternate;
+    color: #fff;
+    text-shadow:
+        0 0 7px #D30302,
+        0 0 10px #D30302,
+        0 0 21px #D30302,
+        0 0 42px #FF5161,
+        0 0 82px #FF5161,
+        0 0 92px #FF5161,
+        0 0 102px #FF5161,
+        0 0 151px #FF5161;
+}
+
+h1 .paper{
+    animation: flicker-paper 1.5s infinite alternate;
+    color: #fff;
+    text-shadow:
+        0 0 7px #b48505,
+        0 0 10px #b48505,
+        0 0 21px #b48505,
+        0 0 42px #ffdb4e,
+        0 0 82px #ffdb4e,
+        0 0 92px #ffdb4e,
+        0 0 102px #ffdb4e,
+        0 0 151px #ffdb4e;
+}
+
+h1 .scissors{
+    animation: flicker-scissors 2.0s infinite alternate;
+    color: #fff;
+    text-shadow:
+        0 0 7px #02c435,
+        0 0 10px #02c435,
+        0 0 21px #02c435,
+        0 0 42px #00fe9b,
+        0 0 82px #00fe9b,
+        0 0 92px #00fe9b,
+        0 0 102px #00fe9b,
+        0 0 151px #00fe9b;
+}
+
+
+.container{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    background-color: #010a01;
+}
