@@ -50,15 +50,37 @@ function play(){
 function game(){
     let userChoice;
     let computerChoice = '';
-
+    let result = '';
 	const buttons = document.querySelectorAll('button');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () => {
-			userChoice = button.textContent;
+
+			userChoice = button.getAttribute('id');
+            let userPic = document.querySelector('.playerPic')
+            userPic.src = `./img/${userChoice}.png`;
+            userPic.style.cssText = 'width: 128px; height: auto;';
+
 			computerChoice = getComputerChoice();
-			console.log("You threw: " + userChoice);
-			console.log("The computer threw: " + computerChoice);
-			let result = determineWinner(userChoice, computerChoice);
+            let computerPic = document.querySelector('.computerPic')
+            computerPic.src = `./img/${computerChoice}.png`;
+            computerPic.style.cssText = 'width: 128px; height: auto;';
+
+            let playerScore = document.querySelector('.playerScore');
+            let computerScore = document.querySelector('.computerScore');
+
+			result = determineWinner(userChoice, computerChoice);
+            if (result === 'The computer won!'){
+                computerScore.textContent = parseInt(computerScore.textContent) + 1;
+            }
+            if (result === 'You won!'){
+                playerScore.textContent = parseInt(playerScore.textContent) + 1;
+            }
+            if (parseInt(computerScore.textContent) === 5){
+                alert('The computer won the game!');
+            }
+            if (parseInt(playerScore.textContent) === 5){
+                alert('You won the game!');
+            }   
 		});
 	});
 }
