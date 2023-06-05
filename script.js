@@ -1,3 +1,42 @@
+function gameOver(winner) {
+    const gameContainer = document.getElementById('player-btn');
+    const gameOverScreen = document.getElementById('gameOverScreen');
+    const winnerMessage = document.getElementById('winnerMessage');
+    const playAgainButton = document.getElementById('playAgainButton');
+  
+    winnerMessage.textContent = winner;
+    gameContainer.classList.remove('active');
+    gameContainer.classList.add('inactive');
+
+    gameOverScreen.classList.remove('inactive');
+    gameOverScreen.classList.add('active');
+  
+    const resetGame = () => {
+      // Reset scores and images
+      const playerScore = document.querySelector('.playerScore');
+      const computerScore = document.querySelector('.computerScore');
+      const userPic = document.querySelector('.playerPic');
+      const computerPic = document.querySelector('.computerPic');
+  
+      playerScore.textContent = '0';
+      computerScore.textContent = '0';
+      userPic.src = './img/question-mark.png';
+      computerPic.src = './img/question-mark.png';
+  
+      // Show the game container
+      gameContainer.classList.remove('inactive');
+      gameContainer.classList.add('active');
+
+      gameOverScreen.classList.remove('active');
+      gameOverScreen.classList.add('inactive');
+  
+      // Remove the event listener
+      playAgainButton.removeEventListener('click', resetGame);
+    };
+  
+    playAgainButton.addEventListener('click', resetGame);
+}
+  
 // get Computer's Choice
 function getComputerChoice (){
     let randomNumber = Math.floor(Math.random() * 3);
@@ -51,7 +90,7 @@ function game(){
     let userChoice;
     let computerChoice = '';
     let result = '';
-	const buttons = document.querySelectorAll('button');
+	const buttons = document.querySelectorAll('#player-btn button');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () => {
 
@@ -76,10 +115,11 @@ function game(){
                 playerScore.textContent = parseInt(playerScore.textContent) + 1;
             }
             if (parseInt(computerScore.textContent) === 5){
-                alert('The computer won the game!');
+                gameOver('The computer won the game!');
+                
             }
             if (parseInt(playerScore.textContent) === 5){
-                alert('You won the game!');
+                gameOver('You won the game!');
             }   
 		});
 	});

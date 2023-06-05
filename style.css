@@ -134,7 +134,7 @@ h1 .scissors{
     height: auto;
 }
 
-.player-btn{
+#player-btn.active{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +166,7 @@ button:hover {opacity: 1}
     border: 2px solid #00fe9b;
 }
 
-.player-btn button img{
+#player-btn button.active img{
     width: 86px;
     height: auto;
 }
@@ -200,3 +200,28 @@ body {
     background-color: #010a01;
     text-align: center;
 }
+
+#gameOverScreen.active button{
+    color: #fff;
+    text-shadow:
+        0 0 7px #02c435,
+        0 0 10px #02c435,
+        0 0 21px #02c435,
+        0 0 42px #00fe9b,
+        0 0 82px #00fe9b,
+        0 0 92px #00fe9b,
+        0 0 102px #00fe9b,
+        0 0 151px #00fe9b;
+    border: 2px solid #00fe9b;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 10px 20px;
+    margin: 5px;
+    transition-duration: 0.4s;
+}
+
+.inactive {
+    display: none;
+  }
