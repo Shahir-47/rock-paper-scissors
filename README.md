@@ -56,4 +56,4 @@ Fonts used: HELLO DENVER DISPLAY by [Good Apples](https://www.1001fonts.com/hell
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
